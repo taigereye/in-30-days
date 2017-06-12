@@ -20,7 +20,4 @@ angular.module('categories', [
 	.controller('CategoriesCtrl', function CategoriesCtrl($scope) {
 
 	})
-	.controller('HabitsCtrl', function HabitsCtrl($scope) {
-
-	})
 ;
