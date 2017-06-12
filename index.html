@@ -5,10 +5,10 @@
 		<title>In 30 Days</title>
 
 		<!-- AngularJS. -->
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
 
 		<!-- UI Router. -->
-		<script src="https://ajax.googleapis.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.js"></script>
 
 		<!-- Bootstrap. -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -29,6 +29,7 @@
 		<!-- Modules. -->
 		<script src="app.js"></script>
 		<script src="categories/categories.js"></script>
+		<script src="categories/habits/habits.js"></script>
 		
 	</head>
 
@@ -41,8 +42,19 @@
 
 		<br></br>
 
-		<div class="container-fluid" ui-view>
-			
+		<div class="container-fluid">
+			<div class="row-fluid">
+				<div class="wrapper">
+
+					<div class="col-sm-3 col-md-2" ui-view="categories">
+					</div>
+				
+					<div class="col-sm-9 col-sm-offset-1 col-md-10 col-md-offset-2 main" ui-view="habits">
+					</div>
+
+				</div>
+			</div>
+
 		</div>
 
 	</body>

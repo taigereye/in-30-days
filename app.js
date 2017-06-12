@@ -1,13 +1,16 @@
 angular.module("In30Days", [
 	'ui.router',
+	'categories',
+	'categories.habits'
 ])
-	.config(function($stateProvider) {
+	.config(function($stateProvider, $urlRouterProvider) {
 		$stateProvider
 			.state('in30days', {
-				url: '/',
-				templateUrl: 'categories/categories_tmpl.html',
-				controller: 'MainCtrl'
+				url: '',
+				abstract: true
 			});
+
+		$urlRouterProvider.otherwise('/');
 	})
 	.controller("MainCtrl", function($scope) {
 
