@@ -1,5 +1,14 @@
 angular.module("In30Days", [
+	'ui.router'
 ])
+	.config(function($stateProvider) {
+		$stateProvider
+			.state('in30days', {
+				url: '/',
+				templateUrl: 'categories_tmpl.html',
+				controller: 'MainCtrl'
+			});
+	})
 	.controller("MainCtrl", function($scope) {
 
 			$scope.categories = [
