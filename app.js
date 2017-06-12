@@ -1,11 +1,11 @@
 angular.module("In30Days", [
-	'ui.router'
+	'ui.router',
 ])
 	.config(function($stateProvider) {
 		$stateProvider
 			.state('in30days', {
 				url: '/',
-				templateUrl: 'categories_tmpl.html',
+				templateUrl: 'categories/categories_tmpl.html',
 				controller: 'MainCtrl'
 			});
 	})
