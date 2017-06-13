@@ -1,16 +1,24 @@
 angular.module('in30Days.models.categories', [
 	
 ])
-	.service('CategoriesModel', function() {
+	.service('CategoriesModel', function($http) {
 		var model = this,
-		categories = [
-			{"title": "Current"},
-			{"title": "Paused"},
-			{"title": "Finished"}
-		];
+		URLS = {
+			FETCH: 'data/categories.json'
+		}
+		categories = [];
+
+		function extract(result) {
+			return result.data;
+		}
+
+		function cacheCategories(result) {
+			categories = extract(result);
+			return categories;
+		}
 
 		model.getCategories = function() {
-			return categories;
+			return $http.get(URLS.FETCH).then(cacheCategories);
 		}
 
 	})

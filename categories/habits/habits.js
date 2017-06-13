@@ -1,4 +1,5 @@
 angular.module('categories.habits', [
+	'in30Days.models.categories',
 	'in30Days.models.habits'
 ])
 	.config(function($stateProvider) {
@@ -16,6 +17,9 @@ angular.module('categories.habits', [
 	.controller('HabitsListCtrl', function HabitsListCtrl($stateParams, HabitsModel) {
 		var habitsListCtrl = this;
 		habitsListCtrl.currentCategoryName = $stateParams.category;
-		habitsListCtrl.habits = HabitsModel.getHabits();
+		HabitsModel.getHabits()
+			.then(function (result) {
+				habitsListCtrl.habits = result;
+			});
 	})
 ;
