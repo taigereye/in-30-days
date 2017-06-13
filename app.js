@@ -12,7 +12,7 @@ angular.module("In30Days", [
 
 		$urlRouterProvider.otherwise('/');
 	})
-	.controller("MainCtrl", function($scope) {
+	.controller("MainCtrl", function($scope, $state) {
 
 			$scope.categories = [
 				{"title": "Current"},
@@ -39,6 +39,12 @@ angular.module("In30Days", [
 
 			function setCurrentCategory(category) {
 				$scope.currentCategory = category;
+
+				$state.go('in30days.categories.habits', {category:category.title});
+
+				cancelCreating();
+				cancelEditing();
+
 			}
 
 			function isCurrentCategory(category) {

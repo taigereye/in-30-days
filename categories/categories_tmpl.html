@@ -4,7 +4,7 @@
 		</div>
 		<ul class="list-unstyled components">
 			<li ng-repeat="category in categories" ng-class="{'active': isCurrentCategory(category)}">
-				<a class="menu-item" href="#" ng-click="setCurrentCategory(category)">{{ category.title }}</a>
+				<a class="menu-item" ng-click="setCurrentCategory(category)">{{ category.title }}</a>
 			</li>	
 		</ul>
 	</nav>
