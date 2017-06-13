@@ -1,6 +1,6 @@
-<h1>{{ currentCategoryName | uppercase }}</h1>
+<h1>{{ habitsListCtrl.currentCategoryName | uppercase }}</h1>
 <div id="content">
-	<div ng-class="{'active': isSelectedHabit(habit.id)}" ng-repeat="habit in habits | filter: {category: currentCategory.title}">
+	<div ng-class="{'active': isSelectedHabit(habit.id)}" ng-repeat="habit in habitsListCtrl.habits | filter: {category: habitsListCtrl.currentCategoryName}">
 		<button type="button" ng-click="deleteHabit(habit)" class="close">&times;</button>
 		<button type="button" ng-click="setEditedHabit(habit);startEditing();" class="btn btn-link">Edit</button>
 		<a class="main-item" href="#">{{ habit.name }}</a>

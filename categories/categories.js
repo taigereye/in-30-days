@@ -1,4 +1,5 @@
 angular.module('categories', [
+	'in30Days.models.categories'
 ])
 	.config(function($stateProvider) {
 		$stateProvider
@@ -6,18 +7,15 @@ angular.module('categories', [
 				url: '/',
 				views: {
 					'categories@': {
-						controller: 'CategoriesCtrl',
+						controller: 'CategoriesListCtrl as categoriesListCtrl',
 						templateUrl: 'categories/categories_tmpl.html'
-					},
-					'habits@': {
-						controller: 'HabitsCtrl',
-						templateUrl: 'categories/habits/habits_tmpl.html'
 					},
 					}
 				}
 			)
 	})
-	.controller('CategoriesCtrl', function CategoriesCtrl($scope) {
-
+	.controller('CategoriesListCtrl', function CategoriesListCtrl(CategoriesModel) {
+		var categoriesListCtrl = this;
+		categoriesListCtrl.categories = CategoriesModel.getCategories();
 	})
 ;

@@ -1,4 +1,5 @@
 angular.module('categories.habits', [
+	'in30Days.models.habits'
 ])
 	.config(function($stateProvider) {
 		$stateProvider
@@ -7,12 +8,14 @@ angular.module('categories.habits', [
 				views: {
 					'habits@': {
 						templateUrl: 'categories/habits/habits_tmpl.html',
-						controller: 'HabitsCtrl'
+						controller: 'HabitsListCtrl as habitsListCtrl'
 					}
 				}
 			})
 	})
-	.controller('HabitsCtrl', function($scope, $stateParams) {
-		$scope.currentCategoryName = $stateParams.category;
+	.controller('HabitsListCtrl', function HabitsListCtrl($stateParams, HabitsModel) {
+		var habitsListCtrl = this;
+		habitsListCtrl.currentCategoryName = $stateParams.category;
+		habitsListCtrl.habits = HabitsModel.getHabits();
 	})
 ;
