@@ -18,12 +18,18 @@ angular.module('categories', [
 			}
 		)
 	})
-	.controller('CategoriesListCtrl', function CategoriesListCtrl(CategoriesModel) {
+	.controller('CategoriesListCtrl', function CategoriesListCtrl(CategoriesModel, HabitsModel) {
 		var categoriesListCtrl = this;
 		
 		CategoriesModel.getCategories()
 			.then(function(result) {
 				categoriesListCtrl.categories = result;
+			});
+
+		HabitsModel.getHabits()
+			.then(function(result) {
+				categoriesListCtrl.habits = result;
+				categoriesListCtrl.habitsTotal = result.length;
 			});
 	})
 ;

@@ -1,6 +1,7 @@
 angular.module('categories.habits', [
 	'categories.habits.create',
 	'categories.habits.edit', 
+	'categories.habits.view',
 	'in30Days.models.categories',
 	'in30Days.models.habits'
 ])
@@ -28,5 +29,6 @@ angular.module('categories.habits', [
 
 		habitsListCtrl.getCurrentCategory = CategoriesModel.getCurrentCategory;
 		habitsListCtrl.getCurrentCategoryTitle = CategoriesModel.getCurrentCategoryTitle;
+		habitsListCtrl.deleteHabit = HabitsModel.deleteHabit;
 	})
 ;

@@ -1,9 +1,9 @@
 <h1>{{ habitsListCtrl.getCurrentCategoryTitle() | lowercase }}</h1>
 <div id="content">
 	<div ng-repeat="habit in habitsListCtrl.habits | filter: {category: habitsListCtrl.getCurrentCategoryTitle()}">
-		<button type="button" ng-click="deleteHabit(habit)" class="close">&times;</button>
+		<button type="button" ng-click="habitsListCtrl.deleteHabit(habit)" class="close">&times;</button>
 		<button type="button" class="btn btn-link" ui-sref="in30Days.categories.habits.edit({habitId:habit.id})">Edit</button>
-		<a class="main-item" href="#">{{ habit.name }}</a>
+		<a class="main-item" ui-sref="in30Days.categories.habits.view({habitId:habit.id})">{{ habit.name }}</a>
 		<div class="col-sm-offset-2 main">
 			<p>Day {{ habit.current_day }} / 30</p>
 		</div>

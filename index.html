@@ -5,10 +5,13 @@
 		<title>In 30 Days</title>
 
 		<!-- AngularJS. -->
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.js"></script>
 
 		<!-- UI Router. -->
 		<script src="https://ajax.googleapis.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.js"></script>
+
+		<!-- Animate -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular-animate.js"></script>
 
 		<!-- Bootstrap. -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -34,6 +37,7 @@
 		<script src="common/models/categories_model.js"></script>
 		<script src="categories/habits/create/habit_create.js"></script>
 		<script src="categories/habits/edit/habit_edit.js"></script>
+		<script src="categories/habits/view/habit_view.js"></script>
 		
 	</head>
 
@@ -42,15 +46,14 @@
 		<h1>In 30 Days</h1>
 
 
-		<h3>Try a challenge for 30 days... and watch it grow into a habit.</h3>
+		<h3><strong>Try a challenge for 30 days... and watch it grow into a habit.</strong></h3>
 
-		<br></br>
 
 		<div class="container-fluid">
 			<div class="row-fluid">
 				<div class="wrapper">
 
-					<div class="col-sm-2" ui-view="categories">
+					<div class="col-sm-3" ui-view="categories">
 					</div>
 				
 					<div class="col-sm-4 main" ui-view="habits">

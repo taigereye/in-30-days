@@ -51,12 +51,12 @@ angular.module('in30Days.models.habits', [
 			}
 
 			return deferred.promise;
-		}	
+		};	
 
 		model.createHabit = function(habit) {
 			habit.id = habits.length;
 			habits.push(habit);
-		}
+		};
 
 		model.updateHabit = function(habit) {
 			var index;
@@ -68,6 +68,22 @@ angular.module('in30Days.models.habits', [
 			}
 
 			habits[index] = habit;
-		}
+		};
+
+		model.changeHabitCategory = function(habit, categoryTitle) {
+			habit.category = categoryTitle;
+		};
+
+		model.incrementHabitDay = function(habit) {
+			habit.current_day += 1;
+		};
+
+		model.deleteHabit = function (habit) {
+			for (var i = 0; i < habits.length; i++) {
+				if (habit.id === habits[i].id) {
+					habits.splice(i, 1);
+				}
+			}
+		};
 	})
 ;
