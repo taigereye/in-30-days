@@ -6,7 +6,23 @@ angular.module('in30Days.models.categories', [
 		URLS = {
 			FETCH: 'data/categories.json'
 		}
-		categories = [];
+		categories = [],
+		currentCategory = {};
+
+		model.setCurrentCategory = function(categoryTitle) {
+			return model.getCategoryByTitle(categoryTitle)
+				.then(function(category) {
+					currentCategory = category;
+				})
+		};
+
+		model.getCurrentCategory = function() {
+			return currentCategory;
+		}
+
+		model.getCurrentCategoryTitle = function() {
+			return currentCategory ? currentCategory.title : "";
+		}
 
 		function extract(result) {
 			return result.data;
@@ -31,7 +47,7 @@ angular.module('in30Days.models.categories', [
 
 			function findCategory() {
 				return _.find(categories, function(c) {
-					return c.name == categoryTitle;
+					return c.title == categoryTitle;
 				})
 			}
 

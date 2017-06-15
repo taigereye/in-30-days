@@ -32,15 +32,17 @@
 		<script src="categories/habits/habits.js"></script>
 		<script src="common/models/habits_model.js"></script>
 		<script src="common/models/categories_model.js"></script>
+		<script src="categories/habits/create/habit_create.js"></script>
+		<script src="categories/habits/edit/habit_edit.js"></script>
 		
 	</head>
 
-	<body ng-controller="MainCtrl">
+	<body>
 		
 		<h1>In 30 Days</h1>
 
 
-		<h3>Try a challenge for 30 days... and watch it grow into a habit!</h3>
+		<h3>Try a challenge for 30 days... and watch it grow into a habit.</h3>
 
 		<br></br>
 
@@ -48,21 +50,13 @@
 			<div class="row-fluid">
 				<div class="wrapper">
 
-					<div class="col-sm-3 col-md-2" ui-view="categories">
+					<div class="col-sm-2" ui-view="categories">
 					</div>
 				
-					<div class="col-sm-9 col-sm-offset-1 col-md-10 col-md-offset-2 main" ui-view="habits">
+					<div class="col-sm-4 main" ui-view="habits">
 					</div>
 
 				</div>
-			</div>
-			
-			<div class="row-fluid" ng-if="shouldShowCreating()">
-				<br></br>
-			</div>
-
-			<div class="row-fluid" ng-if="shouldShowEditing()">
-				
 			</div>
 		</div>
 

@@ -1,10 +1,10 @@
-	<nav id="sidebar">
-		<div class="sidebar-header">
-			<a href="#" ng-click="setCurrentCategory(null)">Menu</a>
-		</div>
-		<ul class="list-unstyled components">
-			<li ng-repeat="category in categoriesListCtrl.categories" ng-class="{'active': isCurrentCategory(category)}">
-				<a class="menu-item">{{ category.title }}</a>
-			</li>	
-		</ul>
-	</nav>
+<nav id="sidebar">
+	<div class="sidebar-header">
+		<a href="#" ui-sref="in30Days.categories">Menu</a>
+	</div>
+	<ul class="list-unstyled components">
+		<li ng-repeat="category in categoriesListCtrl.categories" ng-class="{'active': isCurrentCategory(category)}">
+			<a class="menu-item" ui-sref="in30Days.categories.habits({category:category.title})">{{ category.title }}</a>
+		</li>	
+	</ul>
+</nav>

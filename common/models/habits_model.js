@@ -20,5 +20,10 @@ angular.module('in30Days.models.habits', [
 		model.getHabits = function() {
 			return $http.get(URLS.FETCH).then(cacheHabits);
 		}	
+
+		model.createHabit = function(habit) {
+			habit.id = habits.length;
+			habits.push(habit);
+		}
 	})
 ;

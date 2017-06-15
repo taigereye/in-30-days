@@ -1,10 +1,12 @@
 angular.module('categories.habits', [
+	'categories.habits.create',
+	'categories.habits.edit', 
 	'in30Days.models.categories',
 	'in30Days.models.habits'
 ])
 	.config(function($stateProvider) {
 		$stateProvider
-			.state('in30days.categories.habits', {
+			.state('in30Days.categories.habits', {
 				url: 'categories/:category',
 				views: {
 					'habits@': {
@@ -14,12 +16,17 @@ angular.module('categories.habits', [
 				}
 			})
 	})
-	.controller('HabitsListCtrl', function HabitsListCtrl($stateParams, HabitsModel) {
+	.controller('HabitsListCtrl', function HabitsListCtrl($stateParams, HabitsModel, CategoriesModel) {
 		var habitsListCtrl = this;
-		habitsListCtrl.currentCategoryName = $stateParams.category;
+
+		CategoriesModel.setCurrentCategory($stateParams.category);
+		
 		HabitsModel.getHabits()
-			.then(function (result) {
+			.then(function(result) {
 				habitsListCtrl.habits = result;
 			});
+
+		habitsListCtrl.getCurrentCategory = CategoriesModel.getCurrentCategory;
+		habitsListCtrl.getCurrentCategoryTitle = CategoriesModel.getCurrentCategoryTitle;
 	})
 ;
