@@ -32,7 +32,7 @@ angular.module('categories.habits.create', [
 				name: '',
 				category: $stateParams.category,
 				current_day: 0
-			}
+			};
 		}
 
 		createHabitCtrl.cancelCreating = cancelCreating;

@@ -3,7 +3,7 @@
 		<a href="#" ui-sref="in30Days.categories">Menu</a>
 	</div>
 	<ul class="list-unstyled components">
-		<li ng-repeat="category in categoriesListCtrl.categories" ng-class="{'active': isCurrentCategory(category)}">
+		<li ng-repeat="category in categoriesListCtrl.categories">
 			<a class="menu-item" ui-sref="in30Days.categories.habits({category:category.title})">{{ category.title }}</a>
 		</li>	
 	</ul>
