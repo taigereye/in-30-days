@@ -44,3 +44,49 @@ h3 {
 	font-family: Verdana;
 	font-size: 20px;
 }
+
+rect {
+	stroke: teal;
+	stroke-width: 5px;
+}
+
+svg {
+	height: auto;
+	width: 15%;
+}
+
+.calendar {
+	height: 100px;
+	width: 100px;
+	fill: white;
+}
+
+.header {
+	height: 20px;
+	width: 100px;
+	fill: teal;
+}
+
+line {
+	stroke: teal;
+	stroke-width: 5px;
+}
+
+.rows line {
+	stroke: teal;
+	stroke-width: 1px;
+}
+
+.columns line {
+	stroke: teal;
+	stroke-width: 1px;
+}
+
+text {
+	font-family: Verdana;
+	font-size: 40px;
+	fill: white;
+	stroke: black;
+	stroke-width: 2px;
+	text-anchor: center;
+}
